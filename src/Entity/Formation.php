@@ -9,8 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Formation
+ * @package App\Entity
  * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
- * //@Package App\Entity
  */
 class Formation
 {

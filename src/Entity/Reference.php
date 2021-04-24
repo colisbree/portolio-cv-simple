@@ -7,12 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ReferenceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Reference
+ * @package App/Entity
  * @ORM\Entity(repositoryClass="App\Repository\ReferenceRepository")
- * //@Package App\Entity
  */
 class Reference
 {
@@ -21,6 +22,7 @@ class Reference
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
+     * @Groups({"get"})
      */
     private ?int $id = null;
 
@@ -28,6 +30,7 @@ class Reference
      * @var string|null
      * @ORM\Column
      * @Assert\NotBlank(message="Ce champ ne peut être vide")
+     * @Groups({"get"})
      */
     private ?string $title = null;
 
@@ -35,6 +38,7 @@ class Reference
      * @var string|null
      * @ORM\Column
      * @Assert\NotBlank(message="Ce champ ne peut être vide")
+     * @Groups({"get"})
      */
     private ?string $company = null;
 
@@ -42,6 +46,7 @@ class Reference
      * @var string|null
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="Ce champ ne peut être vide")
+     * @Groups({"get"})
      */
     private ?string $description = null;
 
@@ -49,12 +54,14 @@ class Reference
      * @var DateTimeInterface|null
      * @ORM\Column(type="date_immutable")
      * @Assert\NotBlank(message="Ce champ ne peut être vide")
+     * @Groups({"get"})
      */
     private ?DateTimeInterface $startedAt = null;
 
     /**
      * @var DateTimeInterface|null
      * @ORM\Column(type="date_immutable", nullable=true)
+     * @Groups({"get"})
      */
     private ?DateTimeInterface $endedAt = null;
 
@@ -62,6 +69,7 @@ class Reference
      * @var Collection
      * @ORM\OneToMany(targetEntity="Media", mappedBy="reference", cascade={"persist"}, orphanRemoval=true)
      * @Assert\Count(min=1, minMessage="Vous devez ajouter au moins 1 image")
+     * @Groups({"get"})
      */
     private Collection $medias;
 
@@ -231,8 +239,6 @@ class Reference
     }
 
     /**
-     * Undocumented function
-     *
      * @param Media $media
      * @return void
      */
@@ -244,8 +250,6 @@ class Reference
         }
     }
     /**
-     * Undocumented function
-     *
      * @param Media $media
      * @return void
      */

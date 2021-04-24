@@ -4,12 +4,11 @@ namespace App\Controller\BackOffice;
 use App\Entity\Reference;
 use App\Form\ReferenceType;
 use App\Repository\ReferenceRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Twig\Environment;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 
@@ -62,6 +61,7 @@ class ReferenceController extends AbstractController
     /**
      * @Route("/{id}/update", name="reference_update")
      * @param reference $reference
+     * @param Request $request
      * @return Response
      */
     public function update(reference $reference, Request $request): Response
