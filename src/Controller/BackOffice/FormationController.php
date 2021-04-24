@@ -94,3 +94,4 @@ class FormationController extends AbstractController
         return $this-> redirectToRoute("formation_manage");
     }
 }
+

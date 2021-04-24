@@ -21,3 +21,4 @@ class FormationRepository extends ServiceEntityRepository
         parent::__construct($registry, Formation::class);
     }
 }
+

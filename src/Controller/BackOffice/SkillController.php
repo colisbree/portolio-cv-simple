@@ -93,3 +93,4 @@ class SkillController extends AbstractController
         return $this-> redirectToRoute("skill_manage");
     }
 }
+

@@ -41,3 +41,4 @@ class MediaType extends AbstractType
         $resolver->setDefault("data_class", Media::class);
     }
 }
+

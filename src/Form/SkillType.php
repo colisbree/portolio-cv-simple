@@ -51,3 +51,4 @@ class SkillType extends AbstractType
         $resolver->setDefault("data_class", Skill::class);
     }
 }
+

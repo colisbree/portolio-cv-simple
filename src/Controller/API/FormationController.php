@@ -22,4 +22,4 @@ class FormationController extends AbstractController
     {
         return $this->json($formationRepository->findAll());
     }
-}
+} 

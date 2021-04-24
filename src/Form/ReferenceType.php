@@ -78,3 +78,4 @@ class ReferenceType extends AbstractType
         $resolver->setDefault("data_class", Reference::class);
     }
 }
+

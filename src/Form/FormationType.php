@@ -82,3 +82,4 @@ class FormationType extends AbstractType
         $resolver->setDefault("data_class", Formation::class);
     }
 }
+

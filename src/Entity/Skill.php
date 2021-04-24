@@ -115,3 +115,4 @@ class Skill
         return $this;
     }
 }
+
