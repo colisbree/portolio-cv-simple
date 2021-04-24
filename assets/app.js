@@ -77,3 +77,4 @@ $("body").on("click", ".collection-add", e => {
     collection.append(prototype.replace(/__name__/g, index));
     collection.data('index', index++);
 })  
+
