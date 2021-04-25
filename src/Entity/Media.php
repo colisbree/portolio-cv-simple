@@ -2,10 +2,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Class Media
@@ -34,7 +33,6 @@ Class Media
     /**
      * @var UploadedFile|null
      * @Assert\Image
-     * @ORM\Column
      */
     private ?UploadedFile $file = null;
 
@@ -118,12 +116,14 @@ Class Media
         return $this;
     }
 
+    
+
     /**
      * Get the value of file
      *
      * @return  UploadedFile|null
      */
-    public function getFile(): ?UploadedFile
+    public function getFile()
     {
         return $this->file;
     }
@@ -135,7 +135,7 @@ Class Media
      *
      * @return  self
      */
-    public function setFile(?UploadedFile $file) 
+    public function setFile(?UploadedFile $file)
     {
         $this->file = $file;
 

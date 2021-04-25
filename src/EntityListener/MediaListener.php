@@ -64,4 +64,5 @@ Class MediaListener
             $media->setPath(sprintf("%s/%s", $this->uploadDir, $filename));
         }
     }
+
 }

@@ -47,14 +47,14 @@ if ($("#references").length > 0) {
                 <div class="card">
                     <div class="card-header">
                         <h4>${reference.title}</h4>
+                        <span class="texte-muted">${reference.company} - ${moment(reference.startedAt).format("YYYY")} - ${reference.endedAt === null ? "Aujourd'hui" : moment(reference.endedAt).format("YYYY")}</span>
                     </div>
-                    <span class="texte-muted">${reference.company} - ${moment(reference.startedAt).format("YYYY")} - ${reference.endedAt === null ? "Aujourd'hui" : moment(reference.endedAt).format("YYYY")}</span>
-                </div>
-                <div class="card-body">
-                    <p>${reference.description}</p>
-                    ${reference.medias.map(media =>`
-                        <img src="${media.path}" width="100%" />
-                    `)}
+                    <div class="card-body">
+                        <p>${reference.description}</p>
+                        ${reference.medias.map(media =>`
+                            <img src="${media.path}" width="100%" />
+                        `)}
+                    </div>
                 </div>
             </div>
             `);
